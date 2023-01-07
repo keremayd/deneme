@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script>
+        function yenikısım() {
+            var metin = document.getElementById("textarea").value;
+            var icerik = document.createTextNode(metin);
+            var yenielement = document.createElement("p");
+            yenielement.appendChild(icerik);
+            var anakisim = document.getElementById("anakisim");
+            anakisim.appendChild(yenielement);
+        }
+        function sil() {
+            var elementler = document.getElementsByTagName("p");
+            if (elementler.length != 0){
+                var element = elementler[elementler.length-1];
+                var anne = element.parentNode;
+                anne.removeChild(element);
+            }
+        }
+    </script>
+    </head>
+
+    <body>
+    <div id="anakisim" style="background-color: aquamarine">
+        <h3>Birinci Hikaye</h3>
+        <p>
+        işte uviyk uviyk diye sirklerde kazandığın üç kuruşu buralarda böyle
+        karıyla kızla havuz partilerinde heba edersen yalnız kalırsın.
+        sen bu kızı öpersin ama cenazene penguen gelir naber
+
+        şimdi çıkıp birileri fok balıklarını savunacak kesin ama bana fokları savunmayın gardaş.
+        fokları seven biriyle tartışmam bile. fokist misiniz lan siz? yok "öldürülüyorlarda?" "karın
+        tokluğuna çalıştırılıyorlarda" şükür olum şükür o balığı bulamayanlarda var. gittim gördüm elin
+        amerikasında eşşek kadar balina iki balık için şaklaban olmuştu ordan oraya atlıyordu. balina la,
+        hemide sözüm ona katil balina. hala gözlerim dolar aklıma geldikçe.
+        </p>
+
+        <h3>İkinci Hikaye</h3>
+        <p>
+        gelelim bu fok balığına. ulan şerefsiz iki müzik aleti çalıp alıyon balinayla aynı maaşı sonra
+        efendim "çok yalnızız". bir de yalan yalnış kendini "balık" diye tanıtmış it.
+        bir bak lan aynaya dürzü balığa benzer bir halin var mı! memelisin olum bir kere sen.
+        yunus bile o haliyle balık değil godoş sana mı kaldı balıklık. bak elim ayağı titriyor yine foklardan bahsettim diye.
+        açık konuşiyim şu dünyada bir karetta karetta kadar şerefsiz tek hayvan budur!
+        </p>
+    </div>
+    <textarea id="textarea" rows="10" cols="30"></textarea>
+    <button onclick="yenikısım()">Yeni Kısım Ekle</button>
+    <button onclick="sil()">Son Yazılanı sil</button>
+
+    </body>
+</html>

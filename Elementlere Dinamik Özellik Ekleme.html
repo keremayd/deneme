@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        .kirmizi {
+            color: red;
+            background-color: cornsilk;
+        }
+        </style>
+
+        <script>
+            function degistir() {
+                var elementler = document.getElementsByTagName("h3");
+                var i = 0;
+                for (; i < elementler.length; i++){
+                    var ozellik = document.createAttribute("class");
+                    ozellik.value = "kirmizi";
+                    elementler[i].setAttributeNode(ozellik); //Öznitelik düğümünü ayarla
+                }
+                var hrefozelligi = document.createAttribute("href");
+                hrefozelligi.value = "https://tintincorap.com";
+                document.getElementById("aetiketi").setAttributeNode(hrefozelligi);
+
+            }
+        </script>
+    </head>
+    <body>
+        <div id="anakisim" style="background-color: bisque" >
+        <h3>Birinci Hikaye</h3>
+        <p>
+        işte uviyk uviyk diye sirklerde kazandığın üç kuruşu buralarda
+        böyle karıyla kızla havuz partilerinde heba edersen yalnız kalırsın.
+        sen bu kızı öpersin ama cenazene penguen gelir naber şimdi çıkıp birileri
+        fok balıklarını savunacak kesin ama bana fokları savunmayın gardaş. fokları
+        seven biriyle tartışmam bile. fokist misiniz lan siz? yok "öldürülüyorlarda?"
+        "karın tokluğuna çalıştırılıyorlarda" şükür olum şükür o balığı bulamayanlarda
+        var. gittim gördüm elin amerikasında eşşek kadar balina iki balık için şaklaban
+        olmuştu ordan oraya atlıyordu. balina la, hemide sözüm ona katil balina. hala gözlerim dolar aklıma geldikçe.
+        </p>
+
+        <h3>İkinci Hikaye</h3>
+        <p>
+        gelelim bu fok balığına. ulan şerefsiz iki müzik aleti çalıp alıyon balinayla
+        aynı maaşı sonra efendim "çok yalnızız". bir de yalan yalnış kendini "balık"
+        </p>
+            <a id="aetiketi">Buraya Tıkla</a>
+        </div>
+    <button onclick="degistir()">Değiştir</button>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script>
+    var say = 5;
+    var indirme;
+    var sure;
+    function baslat() {
+        indirme = setTimeout(dosyaindirme,5000); //Ne kadar süre sonra çalışmaya başlıycak
+        sureyisay();
+        sure = setInterval(sureyisay,1000); //Bu fonksiyon 1 saniyede bir sürekli çalışıyor.
+    }
+
+    function dosyaindirme() {
+        window.alert("Dosya indiriliyor...");
+        document.getElementById("para").innerHTML = "";
+        say = 5;
+    }
+    function sureyisay() {
+        document.getElementById("para").innerHTML = "Dosya " + say + " saniye içinde indirilmeye başlanacak...";
+     say--;
+     if (say == 0){
+         clearInterval(sure);
+     }
+    }
+    function islemleridurdur() {
+        clearInterval(sure);
+        clearTimeout(indirme); //setTimeOut Fonsiyonunu geçersiz kılar.
+        document.getElementById("para").innerHTML = "Dosya indirmesi durduruldu.";
+        say = 5;
+    }
+
+
+
+    </script>
+    </head>
+    <body>
+    <p>Dosyayı indirmek için tıklayın</p>
+
+    <p id="para"></p>
+    <button onclick="baslat();">İndirmek için tıklayın</button>
+    <button onclick="islemleridurdur();">İptal etmek için tıklayın</button>
+
+    </body>
+</html>
